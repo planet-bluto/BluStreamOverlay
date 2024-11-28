@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwwf1ciogocr"]
+
+[ext_resource type="Script" path="res://prefabs/ads/BUGINGI.gd" id="1_jtxnj"]
+[ext_resource type="VideoStream" path="res://textures/ads/THE_BEST_VIDEO_EVER_CONCIEVED.ogv" id="1_liwoe"]
+[ext_resource type="Texture2D" uid="uid://c81xyctltlok0" path="res://textures/ads/THE_BEST_VIDEO_EVER_CONCIEVED_ 1.png" id="2_1xeq8"]
+[ext_resource type="AudioStream" uid="uid://qix4l0kcbbha" path="res://textures/ads/THE_BEST_VIDEO_EVER_CONCIEVED.ogg" id="3_4bwvv"]
+
+[node name="AD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jtxnj")
+
+[node name="Ad2" type="TextureRect" parent="."]
+texture_filter = 4
+offset_left = -491.0
+offset_top = -491.0
+offset_right = 1571.0
+offset_bottom = 1571.0
+texture = ExtResource("2_1xeq8")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Ad" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = -491.0
+offset_top = -491.0
+offset_right = 1571.0
+offset_bottom = 1571.0
+stream = ExtResource("1_liwoe")
+volume_db = -80.0
+autoplay = true
+expand = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4bwvv")
+volume_db = -41.116
+autoplay = true

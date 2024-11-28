@@ -1,0 +1,175 @@
+[gd_scene load_steps=12 format=3 uid="uid://cgv26q20v5cua"]
+
+[ext_resource type="PackedScene" uid="uid://dyrq0bc10xfk3" path="res://prefabs/ad_template.tscn" id="1_wh4yc"]
+[ext_resource type="FontFile" uid="uid://3xoio40662cs" path="res://fonts/Shortstack .ttf" id="2_e2co6"]
+[ext_resource type="Texture2D" uid="uid://bgs17fbbvfwri" path="res://textures/blubot-squint.png" id="2_wsw7e"]
+[ext_resource type="Texture2D" uid="uid://dvprwnjj3lw5n" path="res://textures/ad_timer_radial_back.png" id="4_48yn0"]
+[ext_resource type="Texture2D" uid="uid://dbvbqmh7mhiu2" path="res://textures/ad_timer_radial.png" id="5_dna26"]
+[ext_resource type="PackedScene" uid="uid://ckns8kkuufpgc" path="res://prefabs/end_screen.tscn" id="6_5g727"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e665f"]
+font = ExtResource("2_e2co6")
+font_size = 100
+font_color = Color(0.54902, 0.839216, 0.0705882, 1)
+
+[sub_resource type="Animation" id="Animation_uo0xn"]
+resource_name = "HIDE"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WholeLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -12.7649), Vector2(0, -24.6791), Vector2(0, -35.772), Vector2(0, -46.0729), Vector2(0, -55.6111), Vector2(0, -64.416), Vector2(0, -72.5169), Vector2(0, -79.9431), Vector2(0, -86.724), Vector2(0, -92.8889), Vector2(0, -98.4671), Vector2(0, -103.488), Vector2(0, -107.981), Vector2(0, -111.975), Vector2(0, -115.5), Vector2(0, -118.585), Vector2(0, -121.259), Vector2(0, -123.552), Vector2(0, -125.493), Vector2(0, -127.111), Vector2(0, -128.436), Vector2(0, -129.497), Vector2(0, -130.323), Vector2(0, -130.944), Vector2(0, -131.389), Vector2(0, -131.687), Vector2(0, -131.868), Vector2(0, -131.961), Vector2(0, -131.995), Vector2(0, -132)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WholeLabel/Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1080, 131)]
+}
+
+[sub_resource type="Animation" id="Animation_62ff3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WholeLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WholeLabel/Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1080, 131)]
+}
+
+[sub_resource type="Animation" id="Animation_l6dsv"]
+resource_name = "SHOW"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WholeLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5, 0.533333, 0.566667, 0.6, 0.633333, 0.666667, 0.7, 0.733333, 0.766667, 0.8, 0.833333, 0.866667, 0.9, 0.933333, 0.966667, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -132), Vector2(0, -119.235), Vector2(0, -107.321), Vector2(0, -96.228), Vector2(0, -85.9271), Vector2(0, -76.3889), Vector2(0, -67.584), Vector2(0, -59.4831), Vector2(0, -52.0569), Vector2(0, -45.276), Vector2(0, -39.1111), Vector2(0, -33.5329), Vector2(0, -28.512), Vector2(0, -24.0191), Vector2(0, -20.0249), Vector2(0, -16.5), Vector2(0, -13.4151), Vector2(0, -10.7409), Vector2(0, -8.448), Vector2(0, -6.50711), Vector2(0, -4.88889), Vector2(0, -3.564), Vector2(0, -2.50311), Vector2(0, -1.6769), Vector2(0, -1.056), Vector2(0, -0.611115), Vector2(0, -0.312881), Vector2(0, -0.132004), Vector2(0, -0.0391083), Vector2(0, -0.00488281), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WholeLabel/Label:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(72, 131), Vector2(72, 131), Vector2(1080, 131)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pwaku"]
+_data = {
+"HIDE": SubResource("Animation_uo0xn"),
+"RESET": SubResource("Animation_62ff3"),
+"SHOW": SubResource("Animation_l6dsv")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BACKGROUND" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1080.0
+color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[node name="AD" parent="." instance=ExtResource("1_wh4yc")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="WholeLabel" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="WholeLabel"]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 132.0
+color = Color(0, 0, 0, 0.666667)
+
+[node name="Label" type="Label" parent="WholeLabel"]
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 131.0
+text = ">LOADING..."
+label_settings = SubResource("LabelSettings_e665f")
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="Timer" type="TextureProgressBar" parent="."]
+modulate = Color(0.54902, 0.839216, 0.0705882, 0.588235)
+layout_mode = 0
+offset_left = 760.0
+offset_top = 760.0
+offset_right = 1280.0
+offset_bottom = 1280.0
+scale = Vector2(0.48, 0.48)
+step = 0.01
+value = 75.89
+fill_mode = 5
+texture_under = ExtResource("4_48yn0")
+texture_progress = ExtResource("5_dna26")
+
+[node name="Face" type="TextureRect" parent="."]
+visible = false
+texture_filter = 4
+layout_mode = 0
+offset_right = 1080.0
+offset_bottom = 1080.0
+texture = ExtResource("2_wsw7e")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="EndScreen" parent="." instance=ExtResource("6_5g727")]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pwaku")
+}
+speed_scale = 2.0

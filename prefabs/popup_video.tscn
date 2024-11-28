@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cwmi4escvugd5"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+autoplay = true
+expand = true
+loop = true
+bus = &"popups"

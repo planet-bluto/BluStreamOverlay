@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3 uid="uid://btdqd1i51byq1"]
+
+[ext_resource type="Script" path="res://scripts/starting_soon.gd" id="1_80hyp"]
+[ext_resource type="Texture2D" uid="uid://bue28nc1tg1yf" path="res://textures/fade.png" id="2_if2df"]
+[ext_resource type="Texture2D" uid="uid://c5heiklj4w03w" path="res://textures/starback.png" id="3_bp640"]
+[ext_resource type="FontFile" uid="uid://dq7n4atf8d4dw" path="res://fonts/JUNEVILLE.ttf" id="4_dqqhd"]
+
+[sub_resource type="Shader" id="Shader_ahlgn"]
+code = "shader_type canvas_item;
+
+uniform float scroll_speed = 1.0;
+uniform float angle = 0.0;
+
+uniform vec4 swatch_highlight: source_color = vec4(1, 0, 0, 1);
+uniform vec4 swatch_base: source_color = vec4(0.5, 0, 0, 1);
+uniform vec4 swatch_shade: source_color = vec4(0.1, 0, 0, 1);
+
+uniform sampler2D fade : source_color,filter_nearest;
+
+vec2 rotateUV(vec2 uv, vec2 pivot, float rotation) {
+	float cosa = cos(rotation);
+	float sina = sin(rotation);
+	uv -= pivot;
+	return vec2(
+		cosa * uv.x - sina * uv.y,
+		cosa * uv.y + sina * uv.x 
+	) + pivot;
+}
+
+
+void fragment() {
+	float add = (TIME * scroll_speed);
+	vec2 PRE_UV = vec2(UV.x + (add * cos(radians(angle))), UV.y + (add * sin(radians(angle))));
+	vec2 ROTATED = rotateUV(PRE_UV, vec2(0.5), radians(-angle));
+	//vec2 TRANSLATION = vec2(ROTATED.x + add, ROTATED.y + add);
+	ivec2 i_text_size = textureSize(TEXTURE, 0);
+	vec2 text_size = vec2(float(i_text_size.x), float(i_text_size.y));
+	vec2 FADE_UV = vec2(UV.x * (text_size.x/640.0), UV.y  * (text_size.y/360.0));
+	float fade_value = texture(fade, FADE_UV).a;
+	COLOR = texture(TEXTURE, ROTATED);
+	
+	if (COLOR == vec4(1)) {
+		COLOR = mix(swatch_highlight, swatch_base, fade_value);
+	}
+	
+	if ((COLOR) == vec4(0, 0, 0, 1)) {
+		COLOR = mix(swatch_base, swatch_shade, fade_value);
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s5h3a"]
+shader = SubResource("Shader_ahlgn")
+shader_parameter/scroll_speed = 1.0
+shader_parameter/angle = -135.0
+shader_parameter/swatch_highlight = Color(0.0823529, 0.0823529, 0.0823529, 1)
+shader_parameter/swatch_base = Color(0.0509804, 0.0509804, 0.0509804, 1)
+shader_parameter/swatch_shade = Color(0.00392157, 0.00392157, 0.00392157, 1)
+shader_parameter/fade = ExtResource("2_if2df")
+
+[sub_resource type="FontVariation" id="FontVariation_6fcx8"]
+base_font = ExtResource("4_dqqhd")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n108f"]
+
+[node name="StartingSoon" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+script = ExtResource("1_80hyp")
+
+[node name="Checkback" type="TextureRect" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_s5h3a")
+layout_mode = 0
+offset_right = 9600.0
+offset_bottom = 5400.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_bp640")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(1, 1, 1, 0.0392157)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 85.0
+color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="HeaderLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 3.0
+offset_top = 9.0
+offset_right = 1923.0
+offset_bottom = 89.0
+theme_override_colors/default_color = Color(0.00784314, 0.290196, 0.792157, 1)
+theme_override_fonts/normal_font = SubResource("FontVariation_6fcx8")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = ">STARTING_SOON..."
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 85.0
+offset_right = 1920.0
+offset_bottom = 1120.0
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HSeparator" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+theme_override_styles/separator = SubResource("StyleBoxEmpty_n108f")
+
+[node name="HSeparator2" type="HSeparator" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1920
+theme_override_styles/separator = SubResource("StyleBoxEmpty_n108f")

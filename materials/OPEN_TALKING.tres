@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dy7am71soaucs"]
+
+[ext_resource type="Texture2D" uid="uid://35irgylk2ew6" path="res://talking_indicators/placeholder.png" id="1_8xw5t"]
+
+[resource]
+transparency = 1
+cull_mode = 1
+no_depth_test = true
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = ExtResource("1_8xw5t")
+billboard_mode = 1
+billboard_keep_scale = true

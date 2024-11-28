@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://galybhgafkko"]
+
+[ext_resource type="Script" path="res://prefabs/follower.gd" id="1_guiiq"]
+[ext_resource type="PackedScene" uid="uid://cc8bwj5vk8rba" path="res://prefabs/spark.tscn" id="1_ngn6m"]
+
+[node name="Follower" type="PathFollow3D"]
+transform = Transform3D(0.131381, 0, -0.991326, 0, 1, 0, 0.991326, 0, 0.131381, -3.82671, -0.0776518, -1.71625)
+script = ExtResource("1_guiiq")
+
+[node name="Spark" parent="." instance=ExtResource("1_ngn6m")]
+transform = Transform3D(-0.1, 0, -7.91624e-09, 0, 0.1, 0, 7.91624e-09, 0, -0.1, 0, 0, 0)
+TYPE = "MUSE"

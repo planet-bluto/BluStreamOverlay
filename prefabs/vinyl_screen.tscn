@@ -1,0 +1,88 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdm6kut02lf16"]
+
+[ext_resource type="Script" path="res://scripts/spectrum.gd" id="1_b55v4"]
+[ext_resource type="Script" path="res://scripts/vinyl_screen.gd" id="1_wll6r"]
+[ext_resource type="FontFile" uid="uid://dq7n4atf8d4dw" path="res://fonts/JUNEVILLE.ttf" id="1_wmd0t"]
+
+[sub_resource type="Shader" id="Shader_2sfo7"]
+code = "shader_type canvas_item;
+
+const int VU_COUNT = 30;
+const float segment_count = 40.0;
+
+uniform float[VU_COUNT] freq_data;
+uniform vec4 bottom_color: source_color = vec4(0.0, 2.0, 1.0, 1.0);
+uniform vec4 top_color: source_color = vec4(0.0, 2.0, 1.0, 1.0);
+
+void fragment() {
+	vec2 uv = UV;
+	uv.y = 1.0 - uv.y;
+	float vu_count = float(VU_COUNT);
+	vec2 pos = vec2(floor(uv.x * vu_count) / vu_count, floor(uv.y * segment_count) / segment_count);
+	float fft = freq_data[int(uv.x * vu_count)];
+	vec3 color = mix(bottom_color.xyz, top_color.xyz, sqrt(uv.y));
+	float mask = pos.y < fft ? 1.0 : 0.1;
+	vec2 dist = fract((uv - pos) * vec2(vu_count, segment_count)) - 0.5;
+	float led = smoothstep(0.5, 0.35, abs(dist.x)) * smoothstep(0.5, 0.35, abs(dist.y));
+	COLOR = vec4(led * color * mask, 1.0);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7t8kt"]
+shader = SubResource("Shader_2sfo7")
+shader_parameter/freq_data = null
+shader_parameter/bottom_color = Color(0, 0.0901961, 0.490196, 1)
+shader_parameter/top_color = Color(0.00784314, 0.290196, 0.792157, 1)
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_hmg14"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wll6r")
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource("1_b55v4")
+
+[node name="ColorRect" type="ColorRect" parent="Node2D"]
+material = SubResource("ShaderMaterial_7t8kt")
+offset_right = 750.0
+offset_bottom = 120.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 750.0
+offset_bottom = 120.0
+color = Color(0, 0, 0, 0.368627)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_hmg14")
+autoplay = true
+bus = &"Music"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 5.0
+offset_right = 750.0
+offset_bottom = 61.0
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Label" type="RichTextLabel" parent="ScrollContainer/MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+theme_override_colors/default_color = Color(0.54902, 0.839216, 0.0705882, 1)
+theme_override_fonts/normal_font = ExtResource("1_wmd0t")
+theme_override_font_sizes/normal_font_size = 52
+bbcode_enabled = true
+text = "Nothing Playing...Nothing Playing...Nothing Playing...Nothing Playing...Nothing Playing..."
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false

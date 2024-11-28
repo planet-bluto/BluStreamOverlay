@@ -1,0 +1,123 @@
+[gd_scene load_steps=9 format=3 uid="uid://hlqb3mgxa8a"]
+
+[ext_resource type="Script" path="res://classes/slide_base.gd" id="1_o4jrk"]
+[ext_resource type="Texture2D" uid="uid://smcj1ue0u8rs" path="res://textures/end_screen_icons/placeholder.png" id="2_i67nr"]
+[ext_resource type="FontFile" uid="uid://dq7n4atf8d4dw" path="res://fonts/JUNEVILLE.ttf" id="3_ulbbm"]
+[ext_resource type="Texture2D" uid="uid://co2m3gk2ymk8j" path="res://textures/end_screen_icons/ref.png" id="4_ik1i7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c4cig"]
+font = ExtResource("3_ulbbm")
+font_size = 128
+font_color = Color(0.54902, 0.839216, 0.0705882, 1)
+
+[sub_resource type="Animation" id="Animation_hucj4"]
+resource_name = "0"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Header:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0166667, 0.0333333, 0.05, 0.0666667, 0.0833333, 0.1, 0.116667, 0.133333, 0.15, 0.166667, 0.183333, 0.2, 0.216667, 0.233333, 0.25, 0.266667, 0.283333, 0.3, 0.316667, 0.333333, 0.35, 0.366667, 0.383333, 0.4, 0.416667, 0.433333, 0.45, 0.466667, 0.483333, 0.5, 0.516667, 0.533333, 0.55, 0.566667, 0.583333, 0.6, 0.616667, 0.633333, 0.65, 0.666667, 0.683333, 0.7, 0.716667, 0.733333, 0.75, 0.766667, 0.783333, 0.8, 0.816667, 0.833333, 0.85, 0.866667, 0.883333, 0.9, 0.916667, 0.933333, 0.95, 0.966667, 0.983333, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -180), Vector2(0, -171.149), Vector2(0, -162.593), Vector2(0, -154.327), Vector2(0, -146.347), Vector2(0, -138.646), Vector2(0, -131.22), Vector2(0, -124.064), Vector2(0, -117.173), Vector2(0, -110.543), Vector2(0, -104.167), Vector2(0, -98.0408), Vector2(0, -92.16), Vector2(0, -86.5192), Vector2(0, -81.1133), Vector2(0, -75.9375), Vector2(0, -70.9867), Vector2(0, -66.2558), Vector2(0, -61.74), Vector2(0, -57.4342), Vector2(0, -53.3333), Vector2(0, -49.4325), Vector2(0, -45.7267), Vector2(0, -42.2108), Vector2(0, -38.88), Vector2(0, -35.7292), Vector2(0, -32.7533), Vector2(0, -29.9475), Vector2(0, -27.3067), Vector2(0, -24.8258), Vector2(0, -22.5), Vector2(0, -20.3242), Vector2(0, -18.2933), Vector2(0, -16.4025), Vector2(0, -14.6467), Vector2(0, -13.0208), Vector2(0, -11.52), Vector2(0, -10.1392), Vector2(0, -8.87334), Vector2(0, -7.7175), Vector2(0, -6.66666), Vector2(0, -5.71584), Vector2(0, -4.86), Vector2(0, -4.09416), Vector2(0, -3.41333), Vector2(0, -2.8125), Vector2(0, -2.28667), Vector2(0, -1.83083), Vector2(0, -1.44), Vector2(0, -1.10916), Vector2(0, -0.833328), Vector2(0, -0.607498), Vector2(0, -0.426666), Vector2(0, -0.285843), Vector2(0, -0.179993), Vector2(0, -0.104172), Vector2(0, -0.0533295), Vector2(0, -0.0224915), Vector2(0, -0.00666809), Vector2(0, -0.000839233), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_b3t11"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Header:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Contents:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1080)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lqjxi"]
+_data = {
+"0": SubResource("Animation_hucj4"),
+"RESET": SubResource("Animation_b3t11")
+}
+
+[node name="Slide" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1080.0
+offset_bottom = 1080.0
+script = ExtResource("1_o4jrk")
+
+[node name="Header" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1080.0
+offset_bottom = 180.0
+
+[node name="Icon" type="TextureRect" parent="Header"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 58.0
+offset_right = 129.0
+offset_bottom = 159.0
+texture = ExtResource("2_i67nr")
+
+[node name="Label" type="Label" parent="Header"]
+layout_mode = 0
+offset_left = 171.0
+offset_top = 61.0
+offset_right = 883.0
+offset_bottom = 212.0
+text = "Total Sparks"
+label_settings = SubResource("LabelSettings_c4cig")
+
+[node name="Contents" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_top = 1080.0
+offset_right = 1080.0
+offset_bottom = 1980.0
+
+[node name="the center___" type="ColorRect" parent="Contents"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.54902, 0.839216, 0.0705882, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.309804)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_ik1i7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_lqjxi")
+}

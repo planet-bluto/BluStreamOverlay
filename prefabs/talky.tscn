@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://t1i4olmqb7gt"]
+
+[ext_resource type="Script" path="res://scripts/talking_indicator_prefab.gd" id="1_b5i5b"]
+[ext_resource type="QuadMesh" uid="uid://dbsjlg26c3j1g" path="res://talking_indicators/SQUARE_MESH.tres" id="2_17kmv"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lexaf"]
+load_path = "res://.godot/imported/placeholder.png-3c6fb8550b01862aa921fda96193416b.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tj2jd"]
+transparency = 1
+cull_mode = 1
+shading_mode = 0
+diffuse_mode = 3
+specular_mode = 1
+disable_ambient_light = true
+disable_fog = true
+albedo_texture = SubResource("CompressedTexture2D_lexaf")
+billboard_mode = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_e84th"]
+material = SubResource("StandardMaterial3D_tj2jd")
+flip_faces = true
+
+[node name="Talky" type="Node3D"]
+script = ExtResource("1_b5i5b")
+
+[node name="Open" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("QuadMesh_e84th")
+skeleton = NodePath("../..")
+
+[node name="Closed" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("2_17kmv")
+skeleton = NodePath("../..")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.0

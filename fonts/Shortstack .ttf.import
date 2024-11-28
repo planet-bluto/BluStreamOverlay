@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://3xoio40662cs"
+path="res://.godot/imported/Shortstack .ttf-df78e2b968ff4b63d729e17ae34b785d.fontdata"
+
+[deps]
+
+source_file="res://fonts/Shortstack .ttf"
+dest_files=["res://.godot/imported/Shortstack .ttf-df78e2b968ff4b63d729e17ae34b785d.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

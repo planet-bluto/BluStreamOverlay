@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbjrkekykuug4"]
+
+[ext_resource type="Texture2D" uid="uid://g5rvl17e3xuf" path="res://textures/ads/kingpin.png" id="1_04v4f"]
+[ext_resource type="Script" path="res://prefabs/shoutout_element.gd" id="1_xm5da"]
+[ext_resource type="Texture2D" uid="uid://bgjajuigoopb" path="res://textures/shoutout/element_outline.png" id="2_lpnsx"]
+
+[node name="Control" type="Control" groups=["shoutout_element"]]
+custom_minimum_size = Vector2(664, 664)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_xm5da")
+
+[node name="Video" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 633.0
+offset_bottom = 633.0
+expand = true
+loop = true
+
+[node name="Media" type="TextureRect" parent="."]
+use_parent_material = true
+custom_minimum_size = Vector2(603, 603)
+layout_mode = 2
+offset_left = 30.0
+offset_top = 30.0
+offset_right = 633.0
+offset_bottom = 633.0
+texture = ExtResource("1_04v4f")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Outline" type="TextureRect" parent="." groups=["element_outline"]]
+use_parent_material = true
+custom_minimum_size = Vector2(664, 664)
+layout_mode = 2
+offset_right = 664.0
+offset_bottom = 664.0
+texture = ExtResource("2_lpnsx")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
+max_polyphony = 10
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

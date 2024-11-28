@@ -1,0 +1,118 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="BluStreamOverlay"
+run/main_scene="res://test.tscn"
+config/features=PackedStringArray("4.2", "GL Compatibility")
+run/max_fps=60
+config/icon="res://icon.svg"
+
+[audio]
+
+general/text_to_speech=true
+driver/enable_input=true
+
+[autoload]
+
+Globals="*res://autoloads/globals.gd"
+Socket="*res://autoloads/websocket.gd"
+Talkies="*res://autoloads/talkies.gd"
+Fetch="*res://autoloads/fetch.gd"
+GDimp="*res://autoloads/GDimp.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
+window/size/transparent=true
+window/size/window_width_override=960
+window/size/window_height_override=540
+window/subwindows/embed_subwindows=false
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/dpi/allow_hidpi=false
+
+[editor]
+
+run/main_run_args="-bluf"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/jigglebones/plugin.cfg")
+
+[importer_defaults]
+
+import_gif_to_animated_texture={}
+import_gif_to_sprite_frames={
+"frames_per_second": 30
+}
+
+[input]
+
+spawn_popup={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":84,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+paste_popup={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":86,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+close_all_popups={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":true,"ctrl_pressed":true,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+next_slide_please={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"echo":false,"script":null)
+]
+}
+
+[rendering]
+
+occlusion_culling/bvh_build_quality=0
+textures/canvas_textures/default_texture_filter=0
+lights_and_shadows/directional_shadow/size=256
+lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
+lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
+textures/default_filters/use_nearest_mipmap_filter=true
+textures/default_filters/anisotropic_filtering_level=0
+camera/depth_of_field/depth_of_field_bokeh_quality=0
+environment/ssao/quality=0
+environment/ssao/adaptive_target=0.0
+environment/ssil/quality=0
+environment/ssil/adaptive_target=0.0
+textures/decals/filter=0
+textures/light_projectors/filter=0
+environment/glow/upscale_mode=0
+environment/screen_space_reflection/roughness_quality=0
+environment/subsurface_scattering/subsurface_scattering_quality=0
+environment/subsurface_scattering/subsurface_scattering_scale=0.001
+environment/subsurface_scattering/subsurface_scattering_depth_scale=0.001
+global_illumination/sdfgi/frames_to_converge=0
+environment/volumetric_fog/volume_size=16
+environment/volumetric_fog/volume_depth=16
+environment/volumetric_fog/use_filter=0
+anti_aliasing/quality/msaa_2d=2
+anti_aliasing/quality/msaa_3d=2
+viewport/transparent_background=true
+anti_aliasing/quality/screen_space_aa=1
+mesh_lod/lod_change/threshold_pixels=25.2
+lights_and_shadows/positional_shadow/atlas_size=256
+lights_and_shadows/positional_shadow/atlas_16_bits=false
+lights_and_shadows/positional_shadow/atlas_quadrant_0_subdiv=0
+lights_and_shadows/positional_shadow/atlas_quadrant_1_subdiv=0
+lights_and_shadows/positional_shadow/atlas_quadrant_2_subdiv=0
+lights_and_shadows/positional_shadow/atlas_quadrant_3_subdiv=0

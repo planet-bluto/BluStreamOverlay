@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bf6vwvtm3au6u"
+path="res://.godot/imported/vinyl.obj-71c1f161327e701e10e1ff995eda2843.mesh"
+
+[deps]
+
+files=["res://.godot/imported/vinyl.obj-71c1f161327e701e10e1ff995eda2843.mesh"]
+
+source_file="res://objs/vinyl.obj"
+dest_files=["res://.godot/imported/vinyl.obj-71c1f161327e701e10e1ff995eda2843.mesh", "res://.godot/imported/vinyl.obj-71c1f161327e701e10e1ff995eda2843.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

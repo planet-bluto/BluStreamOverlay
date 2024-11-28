@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dlukqxjl0vyku"]
+
+[resource]
+resource_name = "HourglassInner"
+shading_mode = 0

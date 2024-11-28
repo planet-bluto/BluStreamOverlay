@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dacle668hvu8f"]
+
+[resource]
+resource_name = "HourglassInner"
+shading_mode = 0
+albedo_color = Color(0.0823529, 0.0823529, 0.0823529, 1)

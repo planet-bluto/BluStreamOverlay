@@ -1,0 +1,211 @@
+[gd_scene load_steps=18 format=3 uid="uid://d2wklvy702x05"]
+
+[ext_resource type="Texture2D" uid="uid://bi7k5an44vmwu" path="res://textures/popup_drop_shadow.png" id="1_7xh42"]
+[ext_resource type="Texture2D" uid="uid://dvtc8qahrh67h" path="res://textures/popup_frame.png" id="1_axvxt"]
+[ext_resource type="Texture2D" uid="uid://tbbpbavk8oce" path="res://icon.svg" id="1_qskoe"]
+[ext_resource type="Texture2D" uid="uid://dothq70r3ox82" path="res://textures/window_icons/sandwich.png" id="2_d4qcf"]
+[ext_resource type="FontFile" uid="uid://dq7n4atf8d4dw" path="res://fonts/JUNEVILLE.ttf" id="3_nqjul"]
+[ext_resource type="Texture2D" uid="uid://bhawig48nedmm" path="res://textures/popup_buttons.png" id="5_gmpso"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2pox0"]
+resource_local_to_scene = true
+font = ExtResource("3_nqjul")
+font_size = 40
+font_color = Color(1, 0.905882, 0.215686, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_an84t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7er30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_okf53"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x01s2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ad4gm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oc1dg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdhqa"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oqv6l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6rxwy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ylmwa"]
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(240, 135)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 660.0
+offset_bottom = 397.0
+size_flags_horizontal = 0
+
+[node name="DropShadow" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7xh42")
+patch_margin_left = 100
+patch_margin_top = 100
+patch_margin_right = 100
+patch_margin_bottom = 100
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0823529, 0.0823529, 0.0823529, 1)
+
+[node name="Contents" type="Control" parent="."]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 46.0
+offset_right = -15.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Contents"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qskoe")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Frame" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_axvxt")
+patch_margin_left = 15
+patch_margin_top = 46
+patch_margin_right = 15
+patch_margin_bottom = 15
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 6.145
+offset_top = 5.705
+offset_right = 41.145
+offset_bottom = 40.705
+texture = ExtResource("2_d4qcf")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Title" type="Label" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 50.0
+offset_top = 5.0
+offset_right = -180.0
+text = ">BE_RIGHT_BACK"
+label_settings = SubResource("LabelSettings_2pox0")
+clip_text = true
+
+[node name="ScaleButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_an84t")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_7er30")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_okf53")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x01s2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ad4gm")
+
+[node name="MoveButton" type="Button" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(0, 46)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_right = -190.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oc1dg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xdhqa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oqv6l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6rxwy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylmwa")
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_bottom = 46.0
+grow_horizontal = 0
+
+[node name="TextureRect" type="TextureRect" parent="Buttons"]
+custom_minimum_size = Vector2(180, 46)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -180.0
+offset_bottom = 46.0
+grow_horizontal = 0
+texture = ExtResource("5_gmpso")
+
+[node name="MinimizeButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 5.0
+offset_right = 50.0
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oc1dg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xdhqa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oqv6l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6rxwy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylmwa")
+
+[node name="MaximizeButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 109.0
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oc1dg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xdhqa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oqv6l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6rxwy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylmwa")
+
+[node name="CloseButton" type="Button" parent="Buttons"]
+layout_mode = 0
+offset_left = 122.0
+offset_right = 167.0
+offset_bottom = 45.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oc1dg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_xdhqa")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_oqv6l")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6rxwy")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ylmwa")

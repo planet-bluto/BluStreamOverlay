@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://bydpr1itb31l2"
+path="res://.godot/imported/numablunt.gif-8b723c7a27c284f6db94abeb5a86c3c4.tres"
+
+[deps]
+
+source_file="res://textures/ads/numablunt.gif"
+dest_files=["res://.godot/imported/numablunt.gif-8b723c7a27c284f6db94abeb5a86c3c4.tres"]
+
+[params]
+

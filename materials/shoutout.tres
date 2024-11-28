@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://m8i1mgpedof4"]
+
+[ext_resource type="Shader" path="res://shaders/scrolling.gdshader" id="1_anldn"]
+
+[resource]
+shader = ExtResource("1_anldn")
+shader_parameter/scroll_speed = -0.24
+shader_parameter/border_color = Color(0.0392157, 0.537255, 1, 1)

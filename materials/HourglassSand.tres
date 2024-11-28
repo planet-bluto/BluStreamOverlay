@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://vlc3bybrx4vh"]
+
+[sub_resource type="Gradient" id="Gradient_3osq2"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.819592)
+colors = PackedColorArray(1, 0.905882, 0.215686, 1, 1, 0.733333, 0.192157, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y2u4r"]
+gradient = SubResource("Gradient_3osq2")
+
+[resource]
+resource_name = "HourglassInner"
+shading_mode = 0
+albedo_texture = SubResource("GradientTexture1D_y2u4r")
+texture_filter = 0
+texture_repeat = false

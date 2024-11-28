@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://jtbnt5yxjhvh"
+path="res://.godot/imported/eyes_wide.gif-d02ac70c48997e6643f711f8e181c343.tres"
+
+[deps]
+
+source_file="res://textures/ads/eyes_wide.gif"
+dest_files=["res://.godot/imported/eyes_wide.gif-d02ac70c48997e6643f711f8e181c343.tres"]
+
+[params]
+

@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5qvx87qyqfeg"]
+
+[ext_resource type="Script" path="res://prefabs/popup.gd" id="1_m5j8a"]
+[ext_resource type="PackedScene" uid="uid://d2wklvy702x05" path="res://prefabs/inner_popup.tscn" id="2_xo58u"]
+[ext_resource type="FontFile" uid="uid://dq7n4atf8d4dw" path="res://fonts/JUNEVILLE.ttf" id="3_vr15u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4mpri"]
+resource_local_to_scene = true
+font = ExtResource("3_vr15u")
+font_size = 40
+font_color = Color(1, 0.905882, 0.215686, 1)
+
+[node name="Window" type="Control" groups=["POPUP"]]
+custom_minimum_size = Vector2(240, 135)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1054.0
+offset_bottom = 637.0
+focus_mode = 2
+script = ExtResource("1_m5j8a")
+
+[node name="Control" parent="." instance=ExtResource("2_xo58u")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Contents" parent="Control" index="2"]
+anchors_preset = -1
+
+[node name="Title" parent="Control" index="5"]
+label_settings = SubResource("LabelSettings_4mpri")
+
+[editable path="Control"]

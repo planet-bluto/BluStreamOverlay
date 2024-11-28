@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bld8fcjmh5qki"]
+
+[ext_resource type="PackedScene" uid="uid://cc8bwj5vk8rba" path="res://prefabs/spark.tscn" id="1_i8o7l"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Spark" parent="." instance=ExtResource("1_i8o7l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+TYPE = "MUSE"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.879466, 0, -0.475962, 0, 1, 0, 0.475962, 0, 0.879466, -5.16373, 4.76319, 15.3969)

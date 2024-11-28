@@ -1,0 +1,14 @@
+[remap]
+
+importer="import_gif_to_animated_texture"
+type="AnimatedTexture"
+uid="uid://cwrhxr2qye4w0"
+path="res://.godot/imported/dororo_do_you_see_it.gif-e58700b49960237ebd99045796cd4c41.tres"
+
+[deps]
+
+source_file="res://textures/ads/dororo_do_you_see_it.gif"
+dest_files=["res://.godot/imported/dororo_do_you_see_it.gif-e58700b49960237ebd99045796cd4c41.tres"]
+
+[params]
+
