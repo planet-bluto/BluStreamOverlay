@@ -3,3 +3,5 @@ popups/
 
 # Godot 4+ specific ignores
 .godot/
+addons/ffmpeg/win64/~libgdffmpeg.windows.template_debug.x86_64.dll
+addons/godotgif/bin/~godotgif.windows.template_debug.x86_64.dll
